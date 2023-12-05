@@ -1,22 +1,22 @@
-﻿//Zadanie dodatkowe.
+﻿int number = 4566703;
+string numberAsString = number.ToString();
+char[] letters = numberAsString.ToArray();
 
-var name1 = "Ewa";
-var woman = true;
-var age1 = 33;
+char[] digits = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+int[] c = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, };
 
-if(name1 == "Ewa" && age1 == 30)
+for (int i = 0; i<letters.Length; i++)
 {
-    Console.WriteLine("Ewa, lat 33");
+    for(int j = 0; j<digits.Length; j++)
+    {
+        if (letters[i] == digits[j])
+        {
+            c[j]++;
+        }
+    }
 }
-else if(woman && age1 < 30)
+Console.WriteLine("Liczba do sprawdzenia" + '-' + numberAsString);
+for (int i=0; i<10; i++)
 {
-    Console.WriteLine("Kobieta, poniżej 30 lat");
-}
-else if(woman == true && name1 == "Ewa" && age1 == 33 && woman == true && age1 > 30 && !woman == false && age1 != 18)
-{
-    Console.WriteLine("Ewa lat 33 i jej koleżanka poniżej 30 lat rozmawiały z niepełnoletnim mężczyzną");
-}
-else
-{
-    Console.WriteLine("Niepełnoletni mężczyzna");
+    Console.WriteLine("Liczb" + " " + (i) + " " + "jest" + " " + c[i]);
 }
